@@ -44,6 +44,20 @@
             margin: 10px 0;
             border-radius: 4px;
             font-size: 1.2em;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        .skills-list li:hover {
+            background-color: #0056b3;
+        }
+        .skills-list li .skill-content {
+            display: none;
+            padding: 10px;
+            background-color: #e9ecef;
+            color: #333;
+            border-radius: 4px;
+            margin-top: 10px;
         }
         .footer {
             text-align: center;
@@ -64,18 +78,49 @@
         <div class="content">
             <h2>My Skills</h2>
             <ul class="skills-list">
-                <li>JavaScript</li>
-                <li>Node.js - Express</li>
-                <li>Express WS</li>
-                <li>React</li>
-                <li>Vite</li>
-                <li>HTML & CSS</li>
-                <li>Python - Flask</li>
+                <li onclick="toggleSkill(this)">
+                    JavaScript
+                    <div class="skill-content">JavaScript is a versatile, high-level programming language used for building interactive websites and web applications.</div>
+                </li>
+                <li onclick="toggleSkill(this)">
+                    Node.js - Express
+                    <div class="skill-content">Node.js is a JavaScript runtime built on Chrome's V8 engine, and Express is a fast, unopinionated, minimalist web framework for Node.js.</div>
+                </li>
+                <li onclick="toggleSkill(this)">
+                    Express WS
+                    <div class="skill-content">Express WS is a simple and efficient WebSocket integration for Express.js applications.</div>
+                </li>
+                <li onclick="toggleSkill(this)">
+                    React
+                    <div class="skill-content">React is a JavaScript library for building user interfaces, maintained by Facebook and a community of individual developers and companies.</div>
+                </li>
+                <li onclick="toggleSkill(this)">
+                    Vite
+                    <div class="skill-content">Vite is a next-generation front-end tooling that focuses on speed and performance, leveraging modern JavaScript features.</div>
+                </li>
+                <li onclick="toggleSkill(this)">
+                    HTML & CSS
+                    <div class="skill-content">HTML and CSS are the foundational technologies for building and designing web pages.</div>
+                </li>
+                <li onclick="toggleSkill(this)">
+                    Python - Flask
+                    <div class="skill-content">Flask is a micro web framework written in Python, known for its simplicity and ease of use in creating web applications.</div>
+                </li>
             </ul>
         </div>
         <div class="footer">
             <p>Check out my work on <a href="https://github.com/iTSiolinux" target="_blank">GitHub</a></p>
         </div>
     </div>
+    <script>
+        function toggleSkill(element) {
+            var content = element.querySelector('.skill-content');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
